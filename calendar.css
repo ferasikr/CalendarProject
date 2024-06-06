@@ -1,0 +1,196 @@
+
+.calendar-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+.wrapper {
+  width: 600px;
+  /* height: 500px; */
+  background-color: #D2E3C8;
+  border-radius: 20px;
+  /* position: relative; */
+  padding-top: 30px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.icons .bi {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  color: rgb(96, 96, 96);
+  transition: .15s;
+  border-radius: 50px;
+}
+
+.icons .bi:hover {
+  background-color: #86A789;
+}
+
+.current-date {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+}
+
+.calendar {
+  width: 86%;
+  height: 60%;
+  margin: auto;
+}
+
+.weeks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.weeks li {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 70%;
+  position: relative;
+}
+
+.days li {
+  margin-bottom: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.days li.active{
+  color: aliceblue;
+}
+
+.days li.active::after {
+  content: '';
+  position: absolute;
+  height: 54px;
+  width: 54px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #86A789;
+
+}
+
+.days li.inactive {
+  color: rgb(115, 143, 124);
+}
+
+.days li::before {
+  content: '';
+  position: absolute;
+  height: 54px;
+  width: 54px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.15s;
+}
+
+.days li:hover::before {
+  background: #b5d3b7;
+} 
+
+
+li {
+  text-align: center;
+}
+
+.emoji-picker {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.emoji-picker span {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* .emoji-picker span:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+} */
+
+.days li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.days li .date {
+  margin-top: 5px;
+}
+
+.emoji-picker {
+  display: none;
+  position: absolute;
+  flex-direction: row;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.days li {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.date {
+  font-size: 18px; /* Default font size */
+}
+
+.emoji {
+  font-size: 24px; /* Font size for emoji */
+}
